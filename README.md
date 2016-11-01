@@ -3,9 +3,9 @@
 ## What is BetterListing?
 
 BetterListing enhances and themes the default NGINX directory listings __WITHOUT__ the need for the Fancy Index module. As BetterListing uses Javascript and jQuery, no compiling or reinstalling is required. Who can be bothered with that, anyway?  
-
+  
 __Try it out:__ [devcoster.com/betterlisting/demo](https://www.devcoster.com/betterlisting/demo)  
-
+  
 BetterListing was tested on NGINX 1.10.0
 
 ## Features:
