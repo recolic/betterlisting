@@ -23,7 +23,7 @@ BetterListing was tested on NGINX 1.10.0
 ## Requirements:
 
 - NGINX (Fancy Index module not required)
-- Write access to `/etc/nginx/sites-enabled/default`  
+- Write access to `/etc/nginx/sites-enabled/default`
  
 ## Installation:
 
