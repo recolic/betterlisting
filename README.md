@@ -16,8 +16,7 @@ BetterListing was tested on NGINX 1.10.0
 - Easily add support for new MIME types when needed.
 - Released under GNU General Public License v3 (GPL-3).
 - Supports the following file types:  
-```
-.7z, .avi, .bin, .c++, .c, .css, .deb, .doc, .docx, .gif, .gzip, .html, .ico, .iso, .java, .jpeg, .jpg, .js, .mp3, .mp4, .msg, .ogg, .pdf, .php, .png, .ppt, .pptx, .psd, .py, .rar, .sql, .swf, .tiff, .torrent, .txt, .wav, .wmv, .xls, .xlsx, .zip
+```.7z, .avi, .bin, .c++, .c, .css, .deb, .doc, .docx, .gif, .gzip, .html, .ico, .iso, .java, .jpeg, .jpg, .js, .mp3, .mp4, .msg, .ogg, .pdf, .php, .png, .ppt, .pptx, .psd, .py, .rar, .sql, .swf, .tiff, .torrent, .txt, .wav, .wmv, .xls, .xlsx, .zip
 ```
 
 ## Requirements:
