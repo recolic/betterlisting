@@ -1,0 +1,100 @@
+a {
+	color: #4C4C4C;
+}
+
+body{
+	color: #4C4C4C;
+	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+pre{
+	font-family: 'Oxygen Mono', monospace;
+	background-color: #FFFFFF;
+	border: 0px solid #ccc;
+	width:  650px;
+	padding:  9.5px 0px 9.5px 0px;
+}
+
+#footer{
+	margin-top: 20px;
+}
+#footer a{
+	color: #686868;
+}
+
+hr{
+	margin-bottom: 0px;
+}
+
+h4 {
+	color: #686868;
+	margin-top: 20px;
+}
+
+.header {
+	color: #686868;
+	margin:3px 5px 6px 5px;
+}
+
+.icons {
+	margin: 3px 5px 3px 5px;
+	 height: 4%;
+	 width: 4%;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+#mainBox{
+	width:666px;
+}
+
+.text-center{
+	margin-bottom: 20px;
+}
+
+#custom-search-form{
+	font-size: 15px;
+	margin-top: 7px;
+}
+
+#searchIcon{
+	padding: 0px 0px 0px 5px;
+	color: #686868;
+}
+
+.form-group-sm .form-control + .form-control-feedback, .input-group-sm + .form-control-feedback, .input-sm + .form-control-feedback {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.form-group-sm .form-control {
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 4px;
+}
+
+input.form-control,input.form-control:focus {
+
+    box-shadow: none;
+   -webkit-box-shadow: none;
+   -moz-box-shadow: none;
+   -moz-transition: none;
+   -webkit-transition: none;
+}
+
+#searchclear {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    height: 14px;
+    margin: auto;
+    font-size: 14px;
+    cursor: pointer;
+    color: #AAA;
+}
