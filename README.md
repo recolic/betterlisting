@@ -13,8 +13,7 @@ __Try it out:__ [devcoster.com/betterlisting/demo](https://www.devcoster.com/bet
 - Search functionality that searches as you type. 
 - Easily add support for new MIME types when needed.
 - Released under GNU General Public License v3 (GPL-3).
-- Supports the following file types:  
-```
+- Supports the following file types:  ```
 .7z, .avi, .bin, .c++, .c, .css, .deb, .doc, .docx, .gif, .gzip, .html, .ico, .iso, .java, .jpeg, .jpg, .js, .mp3, .mp4, .msg, .ogg, .pdf, .php, .png, .ppt, .pptx, .psd, .py, .rar, .sql, .swf, .tiff, .torrent, .txt, .wav, .wmv, .xls, .xlsx, .zip
 ```
 ## Requirements:
@@ -45,17 +44,17 @@ autoindex_localtime on;
 The following example shows what your configuration might look like if you wanted to use BetterListing on `yourdomain.com/downloads`.
 ```
 server {
-	server_name: yourdomain.com;
-	root /var/www/html;
+		server_name: yourdomain.com;
+		root /var/www/html;
     
-	location /downloads {
-		add_before_body /betterlisting/top.html;
-		add_after_body /betterlisting/bot.html;
-		autoindex on;
-		autoindex_localtime on;
-		autoindex_exact_size off;
-		try files $uri $uri/ =404;
-    }
+    	location /downloads {
+	    	add_before_body /betterlisting/top.html;
+	    	add_after_body /betterlisting/bot.html;
+	    	autoindex on;
+	    	autoindex_localtime on;
+	    	autoindex_exact_size off;
+		    try files $uri $uri/ =404;
+		}
 }
 ```
 ## Acknowledgements:
