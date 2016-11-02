@@ -13,7 +13,8 @@ __Try it out:__ [devcoster.com/betterlisting/demo](https://www.devcoster.com/bet
 - Easily add support for new MIME types when needed.
 - Released under GNU General Public License v3 (GPL-3).
 - Supports the following file types:  
-```.7z, .avi, .bin, .c++, .c, .css, .deb, .doc, .docx, .gif, .gzip, .html, .ico, .iso, .java, .jpeg, .jpg, .js, .mp3, .mp4, .msg, .ogg, .pdf, .php, .png, .ppt, .pptx, .psd, .py, .rar, .sql, .swf, .tiff, .torrent, .txt, .wav, .wmv, .xls, .xlsx, .zip
+```
+.7z, .avi, .bin, .c++, .c, .css, .deb, .doc, .docx, .gif, .gzip, .html, .ico, .iso, .java, .jpeg, .jpg, .js, .mp3, .mp4, .msg, .ogg, .pdf, .php, .png, .ppt, .pptx, .psd, .py, .rar, .sql, .swf, .tiff, .torrent, .txt, .wav, .wmv, .xls, .xlsx, .zip
 ```
 
 ## Requirements:
@@ -22,7 +23,7 @@ __Try it out:__ [devcoster.com/betterlisting/demo](https://www.devcoster.com/bet
 - Write access to `/etc/nginx/sites-enabled/default`
 
 ## Installation:
-1.  Unzip BetterListing to your NGINX webroot so you end up with the following structure:    
+1.  Unzip BetterListing to your NGINX webroot so you end up with the following structure:
 ```
 wwwroot/
 	|- betterlisting/
@@ -40,7 +41,7 @@ add_after_body /betterlisting/bot.html;
 audoindex_exact_size off;
 autoindex_localtime on;
 ```
-The following example shows what your configuration might look like if you wanted to use BetterListing on yourdomain.com/downloads
+The following example shows what your configuration might look like if you wanted to use BetterListing on `yourdomain.com/downloads`.
 ```
 server {
 	server_name: yourdomain.com;
