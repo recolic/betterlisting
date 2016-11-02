@@ -13,9 +13,11 @@ __Try it out:__ [devcoster.com/betterlisting/demo](https://www.devcoster.com/bet
 - Search functionality that searches as you type. 
 - Easily add support for new MIME types when needed.
 - Released under GNU General Public License v3 (GPL-3).
-- Supports the following file types:  ```
+- Supports the following file types:
+`
 .7z, .avi, .bin, .c++, .c, .css, .deb, .doc, .docx, .gif, .gzip, .html, .ico, .iso, .java, .jpeg, .jpg, .js, .mp3, .mp4, .msg, .ogg, .pdf, .php, .png, .ppt, .pptx, .psd, .py, .rar, .sql, .swf, .tiff, .torrent, .txt, .wav, .wmv, .xls, .xlsx, .zip
-```
+`
+
 ## Requirements:
 
 - NGINX (Tested on 1.10.0)
@@ -24,7 +26,7 @@ __Try it out:__ [devcoster.com/betterlisting/demo](https://www.devcoster.com/bet
 ## Installation:
 
 1.  Unzip BetterListing to your NGINX webroot so you end up with the following structure:
-```
+``` 
 wwwroot/
 	|- betterlisting/
 	|- index.html
