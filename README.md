@@ -1,6 +1,5 @@
-![alt text](https://www.devcoster.com/betterlisting/demo/Wow.png "BetterListing Example")
 # BetterListing
-
+![alt text](https://www.devcoster.com/betterlisting/demo/Wow.png "BetterListing Example")
 ## What is BetterListing?
 
 BetterListing enhances and themes the default NGINX directory listings __WITHOUT__ the need for the Fancy Index module. As BetterListing uses Javascript and jQuery, no compiling or reinstalling is required. Who can be bothered with that, anyway?  
