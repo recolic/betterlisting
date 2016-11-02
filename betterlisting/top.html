@@ -1,0 +1,189 @@
+<!-- BetterListing - devCoster.com -->
+<!-- Coster coster@devcoster.com -->
+<!-- Version 1.0 -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Adjust title in settings below -->
+		<title>BetterListing - Directory</title>
+		<meta charset="utf-8" />
+	
+		<!-- Bootstrap Core CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		
+		<!-- Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Oxygen+Mono|Open+Sans' rel='stylesheet' type='text/css'>
+	
+		<!-- Styles -->
+		<link rel="stylesheet" href="/betterlisting/style.css">
+		
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		
+		<script>
+			//
+			//
+			//
+			//
+			// Configure BetterListing here:
+			var websiteName = 'devCoster';
+			var websiteURL = 'https://www.devcoster.com';
+			var googleGACode = 'UA-37198802-1';
+			// End of normal settings.
+			// 
+			//
+			//
+			//
+			//
+		
+			$(document).ready(function(){
+		
+			// Working on nginx HTML and applying settings.
+			var text = $("h1").text();
+			var array = text.split('/');
+			var last = array[array.length-2];
+			var dirStructure = $("a").text();
+			var dirStructure = document.getElementsByTagName('a')[0].href;
+			var dir = text.substring(10);
+			var currentDir = last.charAt(0).toUpperCase() + last.slice(1);
+			var dirTrun;
+			
+			// Truncate long folder names.
+			if (currentDir.length > 19){
+				var currentDir = currentDir.substring(0, 18) + '...';
+			}
+			
+			// Updating page title.
+			document.title = currentDir + ' – ' + websiteName;
+			
+			// Updating page footer.
+			$("#footerURL").text(websiteName);
+			$("#footerURL").attr('href', websiteURL);
+	
+			// Add back button.
+			$("h1").html(currentDir);
+			
+			
+			if (dir.length > 60) {
+				dirTrun = dir.replace(/(.{60})/g, "$1\n")
+			} else {
+				dirTrun = dir.substring(0, dir.length - 1);
+			}
+	
+			// Add subtitle and back arrow.
+			$("h1").append('<h4><a href="' + dirStructure + '">&#8672;</a>  ' + dirTrun + '</h4>');
+	
+			// Add search box.
+			$("h1").prepend('<form id="custom-search-form" class="form-inline pull-right"><div class="btn-group"><input id="searchBox" placeholder="Instant Search" type="search" class="form-control"> <span id="searchclear" class="glyphicon glyphicon-remove-circle"></span></div></form>');	
+		
+			// Add parent directory bit.
+			$("a").eq(1).html('Parent Directory'); 
+	
+			// Add titles.
+			$("pre").prepend('<div class="header">Name                                                   Time                 Size</div>');
+	
+			// Establish supported formats.
+			var list = new Array();
+			var formats = ["bin", "jpg", "gif", "png", "html", "css", "zip", "iso", "tiff", "ico", "psd", "pdf", "exe", "rar", "deb", "swf", "7z", "doc", "docx", "xls", "xlsx", "pptx", "ppt", "txt", "php", "js", "c", "c++", "torrent", "sql", "wmv", "avi", "mp4", "mp3", "wma", "ogg", "msg", "wav", "py", "java", "gzip", "jpeg", "raw"]; 
+	
+			// Run when text is entered in the search box.
+			$('#custom-search-form').on('input',function(e){
+				e.preventDefault();
+				var target = $('#searchBox').val();
+				filter(target);
+			});
+			
+			// Instant search. 
+			function filter(target){
+				var parent_directory = 'parent directory';
+				$('pre a').each(function(){
+					var arraySearch = $(this).attr('href');
+					
+					// Check the href data for searched term. Using href because the link label truncates if the file or folder name is too long.
+					// Special handling for 'Parent Directory' as the href data doesn't contain that word.
+					if (arraySearch.toLowerCase().indexOf(target.toLowerCase()) > -1 || (($(this).text() == 'Parent Directory') && (parent_directory.indexOf(target.toLowerCase()) > -1))){
+						$(this).show();
+						$($(this)[0].nextSibling).css('display', 'inline');
+					} else {
+						$(this).hide();
+						if($($(this)[0].nextSibling).hasClass('hideMe')) {
+							$($(this)[0].nextSibling).css('display', 'none');
+						} else {
+							$($(this)[0].nextSibling).wrap('<span class="hideMe" style="display:none"></style>');
+						}
+					}
+				});
+			}
+			
+			// Runs when clear button is hit.
+			$("#searchclear").click(function(){
+				$("#searchBox").val('');
+				filter('');
+			});
+	
+			// Scan all files in the directory, check the extensions and show the right MIME-type image.
+			$('pre a').each(function(){
+				var found = 0;
+				var arraySplit = $(this).attr('href').split(".");
+				var fileExt = arraySplit[arraySplit.length - 1];
+
+				for (var i = 0; i < formats.length; i++) {
+					if (fileExt.toLowerCase() == formats[i].toLowerCase()) {
+						var found = 1;
+						var oldText = $(this).text();
+						$(this).html('<img class="icons" src="/betterlisting/icons/' + formats[i] + '.png"></img></a>' + oldText);
+						return;
+					}
+				}
+	
+				// Add an icon for the go-back link.
+				if ($(this).text().indexOf("Parent Directory") >= 0) {
+					var found = 1;
+					var oldText = $(this).text();
+					$(this).html('<img class="icons" src="/betterlisting/icons/home.png">' + oldText);
+					return;
+				}
+				
+							
+				// Check for folders as they don't have extensions.
+				if ($(this).attr('href').substr($(this).attr('href').length - 1) == '/') {
+					var found = 1;
+					var oldText = $(this).text();
+					$(this).html('<img class="icons" src="/betterlisting/icons/folder.png">' + oldText.substring(0, oldText.length - 1));
+					
+					// Fix for annoying jQuery behaviour where inserted spaces are treated as new elements -- which breaks my search.
+					var string = ' ' + $($(this)[0].nextSibling).text();
+					
+					// Copy the original meta-data string, append a space char and save it over the old string.
+					$($(this)[0].nextSibling).remove();
+					$(this).after(string);
+					return;
+				}
+				
+				// File format not supported by Better Listings, so let's load a generic icon.
+				if (found == 0){
+					var oldText = $(this).text();
+					$(this).html('<img class="icons" src="/betterlisting/icons/error.png">' + oldText);
+					return;
+				}
+			});
+		}); 
+		</script>
+		
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', googleGACode, 'auto');
+			ga('send', 'pageview');
+		</script>
+		
+	</head>
+
+	<body>
+		<div class="wasContainer">
+			<div class="row"> 
+				<div class="col-xs-11 col-centered" id="mainBox">
+	<!-- Start of nginx output -->
