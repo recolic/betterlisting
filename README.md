@@ -1,3 +1,4 @@
+![alt text](https://www.devcoster.com/betterlisting/demo/Wow.png "BetterListing Example")
 # BetterListing
 
 ## What is BetterListing?
