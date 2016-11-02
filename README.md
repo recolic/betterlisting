@@ -23,8 +23,8 @@ __Try it out:__ [devcoster.com/betterlisting/demo](https://www.devcoster.com/bet
 
 ## Installation:
 1.  Unzip BetterListing to your NGINX webroot so you end up with the following structure:    
- ```
-Web Root/
+```
+wwwroot/
 	|- betterlisting/
 	|- index.html
     |- robots.txt
@@ -53,7 +53,7 @@ server {
 		autoindex_localtime on;
 		autoindex_exact_size off;
 		try files $uri $uri/ =404;
-	}
+    }
 }
 ```
 ## Acknowledgements:
