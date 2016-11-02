@@ -12,10 +12,8 @@ __Try it out:__ [devcoster.com/betterlisting/demo](https://www.devcoster.com/bet
 - Folder and file icons for every item in the directory.
 - Search functionality that searches as you type. 
 - Easily add support for new MIME types when needed.
-- Released under GNU General Public License v3 (GPL-3).
-- Supports the following file types:
-`
-.7z, .avi, .bin, .c++, .c, .css, .deb, .doc, .docx, .gif, .gzip, .html, .ico, .iso, .java, .jpeg, .jpg, .js, .mp3, .mp4, .msg, .ogg, .pdf, .php, .png, .ppt, .pptx, .psd, .py, .rar, .sql, .swf, .tiff, .torrent, .txt, .wav, .wmv, .xls, .xlsx, .zip
+- Supports the following file types:  
+`.7z, .avi, .bin, .c++, .c, .css, .deb, .doc, .docx, .gif, .gzip, .html, .ico, .iso, .java, .jpeg, .jpg, .js, .mp3, .mp4, .msg, .ogg, .pdf, .php, .png, .ppt, .pptx, .psd, .py, .rar, .sql, .swf, .tiff, .torrent, .txt, .wav, .wmv, .xls, .xlsx, .zip
 `
 
 ## Requirements:
@@ -26,14 +24,15 @@ __Try it out:__ [devcoster.com/betterlisting/demo](https://www.devcoster.com/bet
 ## Installation:
 
 1.  Unzip BetterListing to your NGINX webroot so you end up with the following structure:
-``` 
-wwwroot/
+```
+www-root/
 	|- betterlisting/
 	|- index.html
     |- robots.txt
     |- downloads/
     |- etc.
 ```
+
 2.  Open `top.html` found in `/betterlisting/` and input your sites name, URL and Google Analytics code if required. The comments near the top of the file will tell you where to do this. 
 3.  Open your NGINX site configuration file found at `/etc/nginx/sites-enabled/default`.
 4.  For every existing root directory you want to add BetterListing to, add these lines in the correct location block:
@@ -59,7 +58,8 @@ server {
 		}
 }
 ```
-## Acknowledgements:
+## Acknowledgements and Notes:
 
 - [Apaxy](https://github.com/AdamWhitcroft/Apaxy) created by [AdamWhitcroft](http://adamwhitcroft.com) for the idea. If it was available for NGINX, I would have used that.
 - BetterListing makes use of [Faenza icons](http://tiheum.deviantart.com/art/Faenza-Icons-173323228) by [tiheum](http://tiheum.deviantart.com/).
+- Released under GNU General Public License v3 (GPL-3).
