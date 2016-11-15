@@ -2,7 +2,7 @@
 ![alt text](https://www.devcoster.com/betterlisting/demo/Wow.png "BetterListing Example")
 ## What is BetterListing?
 
-BetterListing enhances and themes the default NGINX directory listings __WITHOUT__ the need for the Fancy Index module. As BetterListing uses Javascript and jQuery, no compiling or reinstalling is required. Who can be bothered with that, anyway?  
+BetterListing enhances and themes the default NGINX directory listings __WITHOUT__ the need for PHP or the Fancy Index module. As BetterListing uses Javascript and jQuery, no compiling or reinstalling is required. All you need is NGINX. Who can be bothered with that, anyway?  
   
 __Try it out:__ [devcoster.com/betterlisting/demo](https://www.devcoster.com/betterlisting/demo)
 
