@@ -87,7 +87,8 @@
 
 			// Establish supported formats.
 			var list = new Array();
-			var formats = ["bin", "jpg", "gif", "png", "html", "css", "zip", "iso", "tiff", "ico", "psd", "pdf", "exe", "rar", "deb", "swf", "7z", "doc", "docx", "xls", "xlsx", "pptx", "ppt", "txt", "php", "js", "c", "c++", "torrent", "sql", "wmv", "avi", "mp4", "mp3", "wma", "ogg", "msg", "wav", "py", "java", "gzip", "jpeg", "raw"];
+            // fish command to generate this list: string join '", "' (ls | sed 's/.png//g')
+			var formats = ["7z", "ace", "apk", "application-x-cue", "application-x-glade", "application-x-theme", "asc", "audio-x-mp3-playlist", "authors", "avi", "bak", "bibtex", "bin", "bmp", "bz2", "cc", "c", "cpp", "crt", "crx", "css", "cxx", "deb", "doc", "docx", "empty", "eps", "error", "exe", "flv", "folder", "gif", "gpg", "gz", "hh", "home", "h", "hpp", "html", "hxx", "ico", "image-x-generic", "img", "install", "ipa", "iso", "jar", "java", "jpeg", "jpg", "js", "key", "log", "Makefile", "mp3", "mp4", "mpeg", "msdownload", "msg", "odf", "odg", "odp", "ods", "odt", "ogg", "opera-extension", "opera-unite-application", "opera-widget", "otf", "pdf", "pem", "phatch-actionlist", "php", "pkg", "png", "ppt", "pptx", "psd", "py", "rar", "rb", "README", "real", "rm", "rmvb", "rpm", "rss", "run", "scala", "sh", "sln", "sql", "swf", "tar", "tex", "text-richtext", "text-x-copying", "text-x-generic-template", "text-x-preview.icon", "text-x-source", "tiff", "torrent", "ttf", "txt", "vcalendar", "vnd", "wav", "wma", "xcf", "x-dia-diagram", "xhtml", "xls", "xlsx", "xml", "x-office-address-book", "xz", "zip"];
 
 			// Run when text is entered in the search box.
 			$('#custom-search-form').on('input',function(e){
